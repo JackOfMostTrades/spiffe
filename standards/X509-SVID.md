@@ -77,7 +77,7 @@ Leaf SVIDs MUST set `digitalSignature`. They MAY set `keyEncipherment` and/or `k
 ### 4.4. Extended Key Usage
 This extension indicates one or more purposes for which the key contained in the certificate may be used, in addition to or in place of the basic purposes indicated in the key usage extension. It is defined in [RFC 5280, section 4.2.1.12][6].
 
-Leaf SVIDs SHOULD include this extension, and it MAY be marked as critical. When included, fields `id-kp-serverAuth` and `id-kp-clientAuth` MUST be set.
+Leaf SVIDs SHOULD include this extension, and it MAY be marked as critical. When included, at least one of the `id-kp-serverAuth` or `id-kp-clientAuth` fields MUST be set.
 
 Signing certificates MAY include an Extended Key Usage extension. Note that the processing of the Extended Key Usage extension in intermediate CA certificates varies widely across X.509 certificate validation libraries. Some X.509 implementations will impose EKU constraints in intermediate CA certificates on all certificates below them in the trust chain, and others will not.
 
